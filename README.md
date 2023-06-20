@@ -44,7 +44,7 @@ To run the script and save the generated JSON files in a directory called "foo,"
 
 5. After executing the command, the script will generate a separate .json file for each language specified in the "translations.xlsx" file.
 
-## Example Output
+## Example Output
 
 Based on the example provided above, the script will generate the following JSON files:
 
@@ -72,3 +72,5 @@ Based on the example provided above, the script will generate the following JSON
 ```
 
 Feel free to modify the keys, column names, and any other aspects to suit your specific project requirements.
+
+Github: [GitHub repository](https://github.com/Borgo99/xlsx-translations-to-json).
