@@ -1,6 +1,6 @@
 {
   "name": "xlsx-translations-to-json",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Takes one .xlsx files and generates a JSON file for each language. Each JSON file will have the same keys.",
   "main": "index.js",
   "scripts": {
