@@ -2,13 +2,13 @@
 const fs = require("fs");
 var XLSX = require("xlsx");
 
-const PATHNAME = process.argv.at(-1) || ".";
+const PATHNAME = process.argv.at(2);
 const FILENAME = "translations.xlsx";
 
 const write = (data) => {
   Object.keys(data).forEach((key) => {
     fs.writeFile(
-      `${PATHNAME}/${key}.json`,
+      PATHNAME ? `${PATHNAME}/${key}.json` : `${key}.json`,
       JSON.stringify(data[key], null, 2),
       (err) => {
         if (err) {

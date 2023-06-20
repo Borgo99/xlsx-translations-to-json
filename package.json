@@ -1,7 +1,7 @@
 {
   "name": "xlsx-translations-to-json",
   "version": "0.0.1",
-  "description": "This script will generate a JSON file for each column from the translations.xlsx file, in which the first column have to contain the keys associated to a string value. ",
+  "description": "Takes one .xlsx files and generates a JSON file for each language. Each JSON file will have the same keys.",
   "main": "index.js",
   "scripts": {
     "translate": "node utils/generateTranslationJson.js"
