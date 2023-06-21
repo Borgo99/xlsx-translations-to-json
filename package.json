@@ -4,7 +4,7 @@
   "description": "Takes one .xlsx files and generates a JSON file for each language. Each JSON file will have the same keys.",
   "main": "index.js",
   "scripts": {
-    "translate": "node utils/generateTranslationJson.js"
+    "translate": "node generateTranslationJson.js"
   },
   "bin": {
     "xlsx-translation-to-json": "generateTranslationJson.js",

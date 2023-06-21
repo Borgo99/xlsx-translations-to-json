@@ -8,7 +8,7 @@ The script takes a .xlsx file as input and generates a .json file for each langu
 
 ## Usage
 
-To run the script and save the generated JSON files in a directory called "foo," follow these steps:
+To run the script and save the generated JSON files in a directory called "foo", follow these steps:
 
 1. Create a file named "translations.xlsx" with the following structure:
 
@@ -25,7 +25,7 @@ To run the script and save the generated JSON files in a directory called "foo,"
 3. Install the script by running the following command:
 
    ```shell
-   npm i xlsx-translations-to-json
+   npm i xlsx-translations-to-json --save-dev
    ```
 
 4. Execute the following command to run the script and save the JSON files:
@@ -51,24 +51,55 @@ Based on the example provided above, the script will generate the following JSON
 ```json
 // lang1.json
 {
-  "str1": "hi",
-  "str2": "good",
-  "strN": "bye"
+  "translation": {
+    "str1": "hi",
+    "str2": "good",
+    "strN": "bye"
+  }
 }
 
 // lang2.json
 {
-  "str1": "hola",
-  "str2": "bien",
-  "strN": "adios"
+  "translation": {
+    "str1": "hola",
+    "str2": "bien",
+    "strN": "adios"
+  }
 }
 
 // langN.json
 {
-  "str1": "ciao",
-  "str2": "bene",
-  "strN": "addio"
+  "translation": {
+    "str1": "ciao",
+    "str2": "bene",
+    "strN": "addio"
+  }
 }
+```
+
+This format works well with [i18n package](https://www.npmjs.com/package/i18next).
+This is an example with React:
+
+```js
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import lang1 from "foo/lang1.json";
+import langN from "foo/langN.json";
+
+i18n.use(initReactI18next).init({
+  // lng: "lang1",
+  fallbackLng: "lang1",
+  compatibilityJSON: "v3",
+  resources: {
+    lang1: lang1,
+    langN: langN,
+  },
+  interpolation: {
+    escapeValue: false, // react already safes from xss
+  },
+});
+
+export default i18n;
 ```
 
 Feel free to modify the keys, column names, and any other aspects to suit your specific project requirements.

@@ -28,7 +28,7 @@ const lang_number = Object.keys(workbook.Sheets[workbook.SheetNames[0]]).filter(
 const languages = workbook.Strings.slice(1, lang_number).map((v) => v.t);
 
 const translations = {};
-languages.forEach((lang) => (translations[lang] = {}));
+languages.forEach((lang) => (translations[lang] = { translation: {} }));
 
 let current_key = null;
 Object.values(workbook.Sheets[workbook.SheetNames[0]])
@@ -38,10 +38,8 @@ Object.values(workbook.Sheets[workbook.SheetNames[0]])
       current_key = v;
       return;
     }
-    translations[languages[(i % lang_number) - 1]][current_key] = v.replaceAll(
-      "\\n",
-      "\n"
-    );
+    translations[languages[(i % lang_number) - 1]]["translation"][current_key] =
+      v.replaceAll("\\n", "\n");
   });
 
 write(translations);
