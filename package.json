@@ -3,6 +3,7 @@
   "version": "0.1.1",
   "description": "Takes one .xlsx files and generates a JSON file for each language. Each JSON file will have the same keys.",
   "main": "index.js",
+  "keywords": ["xlsx-to-json", "i18n", "xlsx", "react-i18next", "translate", "translate app", "translate website"],
   "scripts": {
     "translate": "node generateTranslationJson.js"
   },
